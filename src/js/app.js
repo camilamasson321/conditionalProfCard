@@ -35,7 +35,14 @@ function render(variables = {}) {
   if (variables.lastname == null) secondName = `Last Name`;
 
   let webDevel = `${variables.role}`;
-  if (variables.role == true) webDevel = `.picker`;
+  if (variables.role == null) webDevel = `Select Role`;
+  let city = `${variables.city}`;
+  if (variables.city == null) city = `Select City`;
+  let country = `${variables.country}`;
+  if (variables.country == null) country = `Select Country`;
+
+  // let position = `${variables.socialMediaPosition}`;
+  // if (variables.socialMediaPosition == "right") position = "position-right";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -43,8 +50,9 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${firstName} ${secondName}</h1>
           <h2>${webDevel}</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
+          <h3>${city} </h3>
+          <h3>${country}</h3>
+          <ul class = ${variables.socialMediaPosition}> 
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
