@@ -29,8 +29,7 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
-  let firstName = `${variables.name}`;
-  if (variables.name == null) firstName = "First Name";
+  if (variables.name == null) variables.name = "First Name";
   let secondName = `${variables.lastname}`;
   if (variables.lastname == null) secondName = `Last Name`;
 
@@ -40,7 +39,18 @@ function render(variables = {}) {
   if (variables.city == null) city = `Select City`;
   let country = `${variables.country}`;
   if (variables.country == null) country = `Select Country`;
-
+  if (variables.twitter == null) {
+    variables.twitter = "";
+  }
+  if (variables.github == null) {
+    variables.github = "";
+  }
+  if (variables.linkedin == null) {
+    variables.linkedin = "";
+  }
+  if (variables.instagram == null) {
+    variables.linkedin = "";
+  }
   // let position = `${variables.socialMediaPosition}`;
   // if (variables.socialMediaPosition == "right") position = "position-right";
 
@@ -48,12 +58,12 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover} 
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${firstName} ${secondName}</h1>
+          <h1>${variables.name} ${secondName}</h1>
           <h2>${webDevel}</h2>
           <h3>${city} </h3>
           <h3>${country}</h3>
           <ul class = ${variables.socialMediaPosition}> 
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
