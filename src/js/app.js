@@ -49,7 +49,7 @@ function render(variables = {}) {
     variables.linkedin = "";
   }
   if (variables.instagram == null) {
-    variables.linkedin = "";
+    variables.instagram = "";
   }
   // let position = `${variables.socialMediaPosition}`;
   // if (variables.socialMediaPosition == "right") position = "position-right";
@@ -64,9 +64,9 @@ function render(variables = {}) {
           <h3>${country}</h3>
           <ul class = ${variables.socialMediaPosition}> 
             <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
